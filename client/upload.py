@@ -31,10 +31,13 @@ def upload_file( url, payload_size=1000000):
     with open(file_path, 'wb') as file:
         file.write(data)
 
+    #time.sleep(5)
+
     with open(file_path, 'rb') as file:
+        print(file)
         for i in range(10):
             start = time.perf_counter_ns()
-            response = requests.post(url, files={'file': file})
+            response = requests.post(url, files={'file': data}, data={'name': file_path})
             print(response.text)
             if response.status_code == 200:
                 print("File uploaded successfully!")
@@ -63,7 +66,7 @@ def upload_file( url, payload_size=1000000):
 # Example usage
 payload_size = int(sys.argv[1])
 file_path = 'test.txt'
-url = 'http://3.236.250.110:20006/set.php?file=%s' % file_path  # Replace with the PHP service URL
+url = 'http://3.227.249.11:20006/set.php?file=%s' % file_path  # Replace with the PHP service URL
 run_stats = upload_file(url, payload_size=payload_size)
 logger.log(TESTING_LOG_LEVEL, run_stats)
 
