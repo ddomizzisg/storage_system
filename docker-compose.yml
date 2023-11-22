@@ -1,0 +1,21 @@
+version: "3"
+services:
+
+  ######################
+  # Servicios de almacenamiento
+  ######################
+  storage1:
+    image: ddomizzi/storage:muyal
+    ports:
+        - "20006:80"
+    #expose:
+        # - "80"
+    volumes:
+        - ./node/:/var/www/html
+        - ./node/c:/var/www/html/c
+    environment:
+        NODE_ID: 1
+        FOLDER_UPLOADS: c/
+        FOLDER_ABEKEYS: abekeys/
+        URL_METADATA: metadata
+
