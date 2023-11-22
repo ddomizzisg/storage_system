@@ -6,6 +6,9 @@ services:
   ######################
   storage1:
     image: ddomizzi/storage:muyal
+    build:
+      context: ./apache-php
+      dockerfile: Apache1
     ports:
         - "20006:80"
     #expose:

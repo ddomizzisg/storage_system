@@ -1,5 +1,7 @@
 <?php
 
+#print_r($_FILES);
+
 // Check if a file was uploaded successfully
 if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     // Retrieve the file data

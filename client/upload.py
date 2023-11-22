@@ -66,7 +66,7 @@ def upload_file( url, payload_size=1000000):
 # Example usage
 payload_size = int(sys.argv[1])
 file_path = 'test.txt'
-url = 'http://3.227.249.11:20006/set.php?file=%s' % file_path  # Replace with the PHP service URL
+url = 'http://localhost:20006/set.php?file=%s' % file_path  # Replace with the PHP service URL
 run_stats = upload_file(url, payload_size=payload_size)
 logger.log(TESTING_LOG_LEVEL, run_stats)
 

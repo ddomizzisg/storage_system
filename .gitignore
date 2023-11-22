@@ -15,3 +15,5 @@ client/1
 *.csv
 client/downloads/1
 client/downloads/10
+node/c/1000000000
+.docker-compose.yml.kate-swp
