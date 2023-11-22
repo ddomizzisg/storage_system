@@ -52,7 +52,7 @@ def download_file(file, url):
 payload_size = sys.argv[1]
 
 # URL of the file to download
-url = "http://3.236.250.110:20006/c/%s" % payload_size
+url = "http://54.85.1.57:20006/c/%s" % payload_size
 
 print(url)
 

@@ -19,6 +19,7 @@ class RunStats(NamedTuple):
     avg_time_ms: float
     min_time_ms: float
     max_time_ms: float
+    median: float
     stdev_time_ms: float
     avg_bandwidth_mbps: float | None
 
@@ -57,6 +58,7 @@ def upload_file( url, payload_size=1000000):
         avg_time_ms=sum(times_ms) / len(times_ms),
         min_time_ms=min(times_ms),
         max_time_ms=max(times_ms),
+        median=statistics.median(times_ms),
         stdev_time_ms=(
             statistics.stdev(times_ms) if len(times_ms) > 1 else 0.0
         ),
@@ -66,7 +68,7 @@ def upload_file( url, payload_size=1000000):
 # Example usage
 payload_size = int(sys.argv[1])
 file_path = 'test.txt'
-url = 'http://localhost:20006/set.php?file=%s' % file_path  # Replace with the PHP service URL
+url = 'http://54.85.1.57:20006/set.php?file=%s' % file_path  # Replace with the PHP service URL
 run_stats = upload_file(url, payload_size=payload_size)
 logger.log(TESTING_LOG_LEVEL, run_stats)
 
