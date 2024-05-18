@@ -11,6 +11,6 @@ services:
         volumes:
             - ./datacontainer/objects1/:/data/objects:rw
         environment:
-            APIGATEWAY_HOST: 129.114.27.189:8095
-            AUTH_HOST: 129.114.27.189:8090
+            APIGATEWAY_HOST: 129.114.26.127:8095
+            AUTH_HOST: 129.114.26.127:8090
 
