@@ -4,21 +4,13 @@ services:
   ######################
   # Servicios de almacenamiento
   ######################
-  storage1:
-    image: ddomizzi/storage:muyal
-    build:
-      context: ./apache-php
-      dockerfile: Apache1
-    ports:
-        - "20006:80"
-    #expose:
-        # - "80"
-    volumes:
-        - ./node/:/var/www/html
-        - ./node/c:/var/www/html/c
-    environment:
-        NODE_ID: 1
-        FOLDER_UPLOADS: c/
-        FOLDER_ABEKEYS: abekeys/
-        URL_METADATA: metadata
+    datacontainer1:
+        image: dynostore/datacontainer:v1
+        ports:
+            - "20001:5000"
+        volumes:
+        - ./datacontainer/objects1/:/data/objects:rw
+        environment:
+        APIGATEWAY_HOST: 129.114.27.189:8095
+        AUTH_HOST: 129.114.27.189:8090
 
