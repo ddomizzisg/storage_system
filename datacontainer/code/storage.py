@@ -49,3 +49,17 @@ class FileSystemStorage(StorageManager):
     def close(self):
         pass
     
+    def clean(self) -> bool:
+        try:
+            for f in os.listdir(self.basepath):
+                os.remove(os.path.join(self.basepath, f))
+            return True
+        except Exception as e:
+            return False
+        
+    def get_all_keys(self) -> list:
+        return os.listdir(self.basepath)
+
+    def utilization(self) -> int:
+        return sum(os.path.getsize(os.path.join(self.basepath, f)) for f in os.listdir(self.basepath))
+    
