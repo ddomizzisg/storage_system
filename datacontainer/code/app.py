@@ -79,7 +79,7 @@ def get_objects():
 
 @app.route('/clean', methods=["GET"])
 def clean():
-    storage.clear()
+    storage.clean()
     return jsonify({"message": "Data container cleaned"}), 200
 
 @app.route('/utilization', methods=["GET"])
