@@ -20,6 +20,7 @@ services:
             - "20002:5000"
         volumes:
             - ./datacontainer/objects2/:/data/objects:rw
+            - ./datacontainer/code:/app
         environment:
             APIGATEWAY_HOST: 129.114.26.127:8095
             AUTH_HOST: 129.114.26.127:8090
@@ -29,6 +30,7 @@ services:
             - "20003:5000"
         volumes:
             - ./datacontainer/objects3/:/data/objects:rw
+            - ./datacontainer/code:/app
         environment:
             APIGATEWAY_HOST: 129.114.26.127:8095
             AUTH_HOST: 129.114.26.127:8090
