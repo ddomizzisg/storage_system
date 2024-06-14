@@ -1,0 +1,67 @@
+#version: "3"
+services:
+
+  ######################
+  # Servicios de almacenamiento
+  ######################
+    datacontainer1:
+        image: dynostore/datacontainer:v1
+        ports:
+            - "20001:5000"
+        volumes:
+            - run_vol_1:/data/objects:rw
+            - ./datacontainer/code:/app
+        environment:
+            APIGATEWAY_HOST: 129.114.26.127:8095
+            AUTH_HOST: 129.114.26.127:8090
+    datacontainer2:
+        image: dynostore/datacontainer:v1
+        ports:
+            - "20002:5000"
+        volumes:
+            - run_vol_2:/data/objects:rw
+            - ./datacontainer/code:/app
+        environment:
+            APIGATEWAY_HOST: 129.114.26.127:8095
+            AUTH_HOST: 129.114.26.127:8090
+    datacontainer3:
+        image: dynostore/datacontainer:v1
+        ports:
+            - "20003:5000"
+        volumes:
+            - run_vol_3:/data/objects:rw
+            - ./datacontainer/code:/app
+        environment:
+            APIGATEWAY_HOST: 129.114.26.127:8095
+            AUTH_HOST: 129.114.26.127:8090
+    datacontainer4:
+        image: dynostore/datacontainer:v1
+        ports:
+            - "20004:5000"
+        volumes:
+            - run_vol_4:/data/objects:rw
+            - ./datacontainer/code:/app
+        environment:
+            APIGATEWAY_HOST: 129.114.26.127:8095
+            AUTH_HOST: 129.114.26.127:8090
+    datacontainer5:
+        image: dynostore/datacontainer:v1
+        ports:
+            - "20005:5000"
+        volumes:
+            -  run_vol_5:/data/objects:rw
+            - ./datacontainer/code:/app
+        environment:
+            APIGATEWAY_HOST: 129.114.26.127:8095
+            AUTH_HOST: 129.114.26.127:8090
+
+volumes:
+  run_vol_1:
+  run_vol_2:
+  run_vol_3:
+  run_vol_4:
+  run_vol_5:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+            
