@@ -41,7 +41,7 @@ if stderr:
     print("Standard Error:")
     print(stderr)
 
-base_cmd = "sudo docker compose -f docker-compose-varying-dc.yml exec datacontainer2 python3 regist_on_metadata.py 322eda4b1d1da49d141ee00b8f1279f9b8af3f9266d27923fa8797fd64f75655 http://%s:%d/ -m 1000000000 -s 75000000000"
+base_cmd = "sudo docker compose -f docker-compose-varying-dc.yml exec datacontainer1 python3 regist_on_metadata.py 322eda4b1d1da49d141ee00b8f1279f9b8af3f9266d27923fa8797fd64f75655 http://%s:%d/ -m 1000000000 -s 75000000000"
 
 ip = get_external_ip()
 
