@@ -97,3 +97,14 @@ class LRUCacheStorage:
             self.utilization -= len(node.value)
             self._remove_node(node)
             del self.cache[node.key]
+        self.filesystem.write(node.key, node.value)
+        self.utilization -= len(node.value)
+        self._remove_node(node)
+        if node.key in self.cache:
+            del self.cache[node.key]
+        
+    def clean(self):
+        self.cache = {}
+        self.utilization = 0
+        self.filesystem.clean()
+        

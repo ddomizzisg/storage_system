@@ -9,7 +9,7 @@ services:
         ports:
             - "20001:5000"
         volumes:
-            - ./datacontainer/objects1/:/data/objects:rw
+            - /fsx/s1/datacontainer/objects1/:/data/objects:rw
             - ./datacontainer/code:/app
         environment:
             APIGATEWAY_HOST: 129.114.26.127:8095
@@ -19,7 +19,7 @@ services:
         ports:
             - "20002:5000"
         volumes:
-            - ./datacontainer/objects2/:/data/objects:rw
+            - /fsx/s1/datacontainer/objects2/:/data/objects:rw
             - ./datacontainer/code:/app
         environment:
             APIGATEWAY_HOST: 129.114.26.127:8095
@@ -29,7 +29,7 @@ services:
         ports:
             - "20003:5000"
         volumes:
-            - ./datacontainer/objects3/:/data/objects:rw
+            - /fsx/s1/datacontainer/objects3/:/data/objects:rw
             - ./datacontainer/code:/app
         environment:
             APIGATEWAY_HOST: 129.114.26.127:8095
@@ -39,7 +39,7 @@ services:
         ports:
             - "20004:5000"
         volumes:
-            - ./datacontainer/objects4/:/data/objects:rw
+            - /fsx/s1/datacontainer/objects4/:/data/objects:rw
             - ./datacontainer/code:/app
         environment:
             APIGATEWAY_HOST: 129.114.26.127:8095
@@ -49,7 +49,7 @@ services:
         ports:
             - "20005:5000"
         volumes:
-            - ./datacontainer/objects5/:/data/objects:rw
+            - /fsx/s1/datacontainer/objects5/:/data/objects:rw
             - ./datacontainer/code:/app
         environment:
             APIGATEWAY_HOST: 129.114.26.127:8095
