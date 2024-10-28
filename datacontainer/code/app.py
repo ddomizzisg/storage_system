@@ -72,19 +72,6 @@ def head_object(objectkey, tokenuser):
     else:
         return jsonify({"error": "Invalid request method"}), 405
 
-## For developing 
-@app.route('/objects', methods=["GET"])
-def get_objects():
-    return jsonify(storage.get_all_keys()), 200
-
-@app.route('/clean', methods=["GET"])
-def clean():
-    storage.clear()
-    return jsonify({"message": "Data container cleaned"}), 200
-
-@app.route('/utilization', methods=["GET"])
-def utilization():
-    return jsonify({"utilization": storage.utilization()}), 200
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
